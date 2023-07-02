@@ -5,7 +5,6 @@ let persona = {
     apellido: 'Contreras',
     email: 'fer@mail.com',
     edad: 22,
-   
     idioma: 'es',
     get lang(){
         return this.idioma.toUpperCase();

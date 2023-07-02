@@ -5,3 +5,4 @@ const usuario = {
 };
 
 document.write(usuario.fullName);
+

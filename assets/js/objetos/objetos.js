@@ -9,11 +9,11 @@ let persona = {
     }
 }
 
-let persona2 = new Object();
+let persona2 = new Object(); //crear nuevo objeto reservando espacio en memoria
 persona2.nombre = 'Brisa';
 persona2.direccion = 'Geo';
 persona2.tel = '5539703036'
-console.log(persona.nombreCompleto())
+console.log(persona2.direccion)
 
 //aceder a propiedades 
 console.log(persona['apellido']);
@@ -45,3 +45,26 @@ console.log(arrayPersona);
 let personaString = JSON.stringify(persona);
 console.log(personaString)
 
+//ejercicio web
+
+let iphone={
+    precio: 13000,
+    descuento: 10,
+    suma: function(){
+        return this.precio*(1 - this.descuento/100)
+        
+    } 
+    
+}
+console.log(iphone.suma())
+//constructor de objetos
+function datosMedico(nombre,especialidad,RFC){
+this.nombre = nombre;
+this.especialidad = especialidad;
+this.RFC = RFC;
+}
+let dats = new datosMedico('Elemango', 'Cirujano', 'DFCRFTGOPELSMELE');
+console.log(dats);
+
+dats.nombre = "Fernando";
+console.log(dats)
