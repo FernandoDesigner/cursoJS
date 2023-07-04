@@ -58,13 +58,20 @@ let iphone={
 }
 console.log(iphone.suma())
 //constructor de objetos
+
 function datosMedico(nombre,especialidad,RFC){
 this.nombre = nombre;
 this.especialidad = especialidad;
 this.RFC = RFC;
 }
-let dats = new datosMedico('Elemango', 'Cirujano', 'DFCRFTGOPELSMELE');
+let dats = new datosMedico('Elemango', 'opo', 'DFCRFTGOPELSMELE');
 console.log(dats);
 
 dats.nombre = "Fernando";
 console.log(dats)
+
+let datos2 = new datosMedico('Cecilia', 'General', 'DFCRFTGOPELddfLE');
+console.log(datos2);
+
+datosMedico.prototype.especialidad = 'Nutriologo';
+console.log(dats.especialidad)
