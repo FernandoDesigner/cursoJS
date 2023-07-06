@@ -34,7 +34,7 @@ mascota1.nombre = "Manotas";
 console.log(mascota1.nombre)
 
 //HERENCIA
-class Mascota2 {
+class Mascota2 { //clase padre
     constructor(nombre, tipo, sexo) {
         this._nombre = nombre;
         this._tipo = tipo;
@@ -61,10 +61,32 @@ class Mascota2 {
     set sexo(sexo) {
         this._sexo = sexo;
     }
-}
-
-class mascotaHermano extends Mascota2 { //aplica herencia de atributos
-    constructor(tipoMascota) {
-        this._tipoMascota
+    nombreRaza(){
+        return "Nombre: " +this._nombre + " " + "Raza: " + this._tipo;
     }
 }
+
+class mascotaHermano extends Mascota2 { //aplica herencia de atributos clase hija
+    constructor(nombre, tipo, sexo, tipoMascota) {
+        super(nombre, tipo, sexo); //llamar al constructor de la clase padre
+        this._tipoMascota = tipoMascota;
+    }
+    get tipoMascota(){
+        return this._tipoMascota;
+    }
+    set tipoMascota(tipoMascota){
+        this._tipoMascota = tipoMascota;
+    }
+
+    //sobrescritura
+    nombreRaza(){
+        return "Nombre: " +this._nombre + " " + "Raza: " + this._tipo + ", " + "Tamaño: " + this._tipoMascota;
+    }
+
+
+}
+
+let mascota2 = new mascotaHermano('messibus', 'snauser', 'M', 'pequeña');
+console.log(mascota2)
+console.log(mascota2._nombre)
+console.log(mascota2.nombreRaza());
