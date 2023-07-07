@@ -25,7 +25,14 @@ class Mascota {
     set nombre(nombre) {
         this._nombre = nombre;
     }
+    static saludar(){ //static se asocia con una clase pero no con los objetos
+        console.log("statico g");
+    }
+    static saludar2(persona1){
+        console.log(persona1.nombre)
+    }
 }
+
 
 let mascota1 = new Mascota('Miky', 'Gato', 'M');
 console.log(mascota1.nombre)
@@ -64,7 +71,10 @@ class Mascota2 { //clase padre
     nombreRaza(){
         return "Nombre: " +this._nombre + " " + "Raza: " + this._tipo;
     }
+
+   
 }
+let mascota3 = new Mascota2('gorda', 'gata', 'hembra');
 
 class mascotaHermano extends Mascota2 { //aplica herencia de atributos clase hija
     constructor(nombre, tipo, sexo, tipoMascota) {
@@ -83,6 +93,9 @@ class mascotaHermano extends Mascota2 { //aplica herencia de atributos clase hij
         return "Nombre: " +this._nombre + " " + "Raza: " + this._tipo + ", " + "Tamaño: " + this._tipoMascota;
     }
 
+ 
+    
+
 
 }
 
@@ -90,3 +103,10 @@ let mascota2 = new mascotaHermano('messibus', 'snauser', 'M', 'pequeña');
 console.log(mascota2)
 console.log(mascota2._nombre)
 console.log(mascota2.nombreRaza());
+
+// mascota2.saludar() no es posible llamar un metodo static desde un metodo pero si desde una clase:
+
+
+// a un metodo static se le pueden pasar como argumentos un objeto
+
+
